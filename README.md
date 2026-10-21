@@ -12,9 +12,9 @@ Built with **yt-dlp and FFmpeg**, targeting Windows, macOS, and Linux desktops.
 
 **Early preview:** synthetic media conversion is tested. Real YouTube downloads and physical desktop shortcuts still need verification. [See the evidence and limits](docs/VERIFICATION.md).
 
-![Animated replay of a real local test: a synthetic fixture is saved as MP4 and converted to MP3](assets/demo.gif)
+![VYBE desktop demo: copy a YouTube link and save MP4 video or MP3 audio](assets/demo.gif)
 
-*This animation replays the actual local media test transcript. It demonstrates the download/conversion pipeline with synthetic content, not a YouTube download or a recording of physical shortcuts. [Transcript](assets/demo-transcript.txt) · [Reproduce it](docs/DEMO.md).*
+*Desktop recording supplied by the author, converted to a looping GIF. Copy a link, then press Ctrl + Alt + V for MP4 or Ctrl + Alt + A for MP3 (Control + Option on macOS). The MP3 scene contains a typo in its Mac overlay: use **A**, not V. [Demo details](docs/DEMO.md).*
 
 [Installation](docs/INSTALL.md) · [Report a bug](https://github.com/mickfive05/VYBE/issues/new/choose) · [Help verify your desktop](CONTRIBUTING.md) · [Releases](https://github.com/mickfive05/VYBE/releases)
 

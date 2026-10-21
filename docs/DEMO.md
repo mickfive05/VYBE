@@ -1,6 +1,17 @@
-# Reproduce the media demo
+# Demo assets
 
-The README animation is a rendered replay of actual test output. It is not a
+## README desktop recording
+
+`assets/demo.gif` is converted from the author-supplied desktop recording
+(`video.mp4`, approximately 14.6 seconds). It loops without audio at 8 frames
+per second, scaled to 720 pixels wide with a 128-color palette.
+The MP3 scene has a typo in its macOS shortcut overlay: the correct shortcut
+is **Control + Option + A**. The original footage is otherwise unchanged.
+This recording is separate from the automated synthetic media test below.
+
+## Reproduce the synthetic media test
+
+The test animation is a rendered replay of actual test output. It is not a
 screen recording and does not show physical shortcuts or a YouTube download.
 The test creates one second of synthetic H.264/AAC video and runs the real
 yt-dlp transfer and FFmpeg conversion over a loopback HTTP connection.
@@ -15,7 +26,7 @@ python -m pip install Pillow imageio-ffmpeg
 python scripts/record_demo.py
 ```
 
-The script fails if the media test fails. On success it writes `assets/demo.gif`,
+The script fails if the media test fails. On success it writes `assets/synthetic-demo.gif`,
 `assets/demo-transcript.txt`, and `assets/social-preview.png`. It renders only
 the deliberately emitted demo milestones, removing temporary paths from the
 presentation. All decoding assertions must pass before a success milestone

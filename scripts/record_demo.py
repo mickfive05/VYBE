@@ -58,7 +58,7 @@ def main():
         return image
 
     frames = [frame(index) for index in range(4)]
-    frames[0].save(assets / "demo.gif", save_all=True, append_images=frames[1:], duration=[900, 1400, 1400, 3000], loop=0)
+    frames[0].save(assets / "synthetic-demo.gif", save_all=True, append_images=frames[1:], duration=[900, 1400, 1400, 3000], loop=0)
     social = Image.new("RGB", (1280, 640), "#101617")
     draw = ImageDraw.Draw(social)
     draw.rectangle((64, 72, 72, 568), fill="#d8f581")
