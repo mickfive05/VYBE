@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vybe-clipboard"
+version = "0.1.0"
+description = "Copy a YouTube link. Press a shortcut. Keep the video or audio."
+requires-python = ">=3.10"
+dependencies = ["yt-dlp[default]>=2025.11.12", "pynput>=1.7.7,<2", "pyperclip>=1.9,<2"]
+readme = "README.md"
+
+[project.scripts]
+vybe = "vybe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

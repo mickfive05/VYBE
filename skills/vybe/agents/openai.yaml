@@ -1,0 +1,4 @@
+interface:
+  display_name: "VYBE"
+  short_description: "YouTube clipboard downloads with two shortcuts"
+  default_prompt: "Use $vybe to install and verify MP4 and MP3 clipboard shortcuts on my desktop."
