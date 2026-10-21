@@ -14,7 +14,7 @@ Built with **yt-dlp and FFmpeg**, targeting Windows, macOS, and Linux desktops.
 
 ![VYBE desktop demo: copy a YouTube link and save MP4 video or MP3 audio](assets/demo.gif)
 
-*Desktop recording supplied by the author, converted to a looping GIF. Copy a link, then press Ctrl + Alt + V for MP4 or Ctrl + Alt + A for MP3 (Control + Option on macOS). The MP3 scene contains a typo in its Mac overlay: use **A**, not V. [Demo details](docs/DEMO.md).*
+*Desktop recording supplied by the author, converted to a looping GIF. Copy a link, then press Ctrl + Alt + V for MP4 or Ctrl + Alt + A for MP3 (Control + Option on macOS). [Demo details](docs/DEMO.md).*
 
 [Installation](docs/INSTALL.md) · [Report a bug](https://github.com/mickfive05/VYBE/issues/new/choose) · [Help verify your desktop](CONTRIBUTING.md) · [Releases](https://github.com/mickfive05/VYBE/releases)
 

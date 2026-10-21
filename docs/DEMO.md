@@ -3,10 +3,10 @@
 ## README desktop recording
 
 `assets/demo.gif` is converted from the author-supplied desktop recording
-(`video.mp4`, approximately 14.6 seconds). It loops without audio at 8 frames
+(`video1.mp4`, approximately 14.6 seconds). It loops without audio at 8 frames
 per second, scaled to 720 pixels wide with a 128-color palette.
-The MP3 scene has a typo in its macOS shortcut overlay: the correct shortcut
-is **Control + Option + A**. The original footage is otherwise unchanged.
+The recording shows **Control + Option + V** for MP4 and
+**Control + Option + A** for MP3 on macOS.
 This recording is separate from the automated synthetic media test below.
 
 ## Reproduce the synthetic media test
