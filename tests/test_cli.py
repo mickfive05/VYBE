@@ -18,7 +18,7 @@ class CLITests(unittest.TestCase):
                 cli.clipboard_url()
 
     def test_wayland_routes_to_native_shortcuts(self):
-        with patch.object(cli.sys, "platform", "linux"), patch.dict(os.environ, {"XDG_SESSION_TYPE": "wayland"}):
+        with patch.object(cli, "sys", SimpleNamespace(platform="linux")), patch.dict(os.environ, {"XDG_SESSION_TYPE": "wayland"}):
             with self.assertRaisesRegex(VybeError, "bind 'vybe download mp4'"):
                 cli.listen({}, threading.Event())
 
@@ -33,7 +33,7 @@ class CLITests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp, \
                 patch.dict("sys.modules", {"pynput": SimpleNamespace(keyboard=keyboard)}), \
                 patch.object(cli, "data_dir", return_value=Path(temp)), \
-                patch.object(cli.sys, "platform", "darwin"):
+                patch.object(cli, "sys", SimpleNamespace(platform="darwin")):
             with self.assertRaisesRegex(VybeError, "Grant Accessibility"):
                 cli.listen({"mp4_hotkey": "v", "mp3_hotkey": "a"}, threading.Event())
 
@@ -70,7 +70,7 @@ class CLITests(unittest.TestCase):
             keyboard = SimpleNamespace(HotKey=SimpleNamespace(parse=lambda text: list(text)), GlobalHotKeys=Listener)
             with tempfile.TemporaryDirectory() as temp, \
                     patch.dict("sys.modules", {"pynput": SimpleNamespace(keyboard=keyboard)}), \
-                    patch.object(cli.sys, "platform", "darwin"), \
+                    patch.object(cli, "sys", SimpleNamespace(platform="darwin")), \
                     patch.object(cli, "data_dir", return_value=Path(temp)), \
                     patch.object(cli, "clipboard_url", return_value="https://youtu.be/BaW_jenozKc"), \
                     patch.object(cli, "download", side_effect=downloaded):

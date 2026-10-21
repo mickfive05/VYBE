@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Installation and troubleshooting
+    url: https://github.com/mickfive05/VYBE/blob/main/docs/INSTALL.md
+    about: Check dependencies, permissions, logs, and desktop support first.

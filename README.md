@@ -2,9 +2,21 @@
 
 ### Copy the link. Press the shortcut. Keep the moment.
 
+[![Tests](https://github.com/mickfive05/VYBE/actions/workflows/tests.yml/badge.svg)](https://github.com/mickfive05/VYBE/actions/workflows/tests.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776ab)](pyproject.toml)
+[![Status: early preview](https://img.shields.io/badge/status-early%20preview-f4b942)](docs/VERIFICATION.md)
+
 VYBE turns the YouTube link on your clipboard into an MP4 video or MP3 audio file. Two global shortcuts. No application window. A focused local utility that stays out of your way.
 
-Built with **yt-dlp and FFmpeg** for Windows, macOS, and Linux desktops.
+Built with **yt-dlp and FFmpeg**, targeting Windows, macOS, and Linux desktops.
+
+**Early preview:** synthetic media conversion is tested. Real YouTube downloads and physical desktop shortcuts still need verification. [See the evidence and limits](docs/VERIFICATION.md).
+
+![Animated replay of a real local test: a synthetic fixture is saved as MP4 and converted to MP3](assets/demo.gif)
+
+*This animation replays the actual local media test transcript. It demonstrates the download/conversion pipeline with synthetic content, not a YouTube download or a recording of physical shortcuts. [Transcript](assets/demo-transcript.txt) · [Reproduce it](docs/DEMO.md).*
+
+[Installation](docs/INSTALL.md) · [Report a bug](https://github.com/mickfive05/VYBE/issues/new/choose) · [Help verify your desktop](CONTRIBUTING.md) · [Releases](https://github.com/mickfive05/VYBE/releases)
 
 | Shortcut | Result |
 | --- | --- |
@@ -89,3 +101,13 @@ python -m unittest discover -s tests -v
 ```
 
 CI is configured for Windows, macOS, and Linux with Python 3.10 and 3.13. [Verification](docs/VERIFICATION.md) distinguishes local results from pending CI and desktop checks. No standalone installers or bundled FFmpeg/Deno binaries are included.
+
+## Help shape VYBE
+
+The most useful feedback is a real installation report. Follow [CONTRIBUTING.md](CONTRIBUTING.md), then open a desktop verification issue with your OS, session type, results for both formats, and any permission or setup steps. Mark checks you did not run as untested.
+
+Have a reproducible failure or a workflow idea? Use the [issue forms](https://github.com/mickfive05/VYBE/issues/new/choose). Review logs before posting; remove private links, tokens, cookies, and personal paths.
+
+## Rights and permissions
+
+**All rights reserved.** The source is publicly visible for review; VYBE is not currently offered under an open-source license. See [LICENSE](LICENSE) and contact the maintainer through GitHub for permissions. Third-party components retain their own licenses. Discuss contribution terms before submitting code.

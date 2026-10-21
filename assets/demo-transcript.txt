@@ -1,0 +1,7 @@
+Command: VYBE_MEDIA_TESTS=1 python -m unittest discover -s tests -p test_media.py -v
+
+Created a 1-second synthetic H.264/AAC fixture.
+MP4 saved and decoded successfully: fixture [fixture].mp4
+MP3 saved and decoded successfully: fixture [fixture].mp3
+
+Result: media test passed. Local synthetic content; desktop shortcuts and YouTube are not exercised.

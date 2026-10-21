@@ -34,6 +34,7 @@ class MediaTests(unittest.TestCase):
                             "color=c=blue:s=160x90:r=10", "-f", "lavfi", "-i",
                             "sine=frequency=440:sample_rate=44100", "-t", "1",
                             "-c:v", "libx264", "-c:a", "aac", str(root / "fixture.mp4")], check=True)
+            print("VYBE DEMO | Created a 1-second synthetic H.264/AAC fixture.", flush=True)
             handler = partial(SimpleHTTPRequestHandler, directory=str(root))
             server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
             worker = threading.Thread(target=server.serve_forever, daemon=True)
@@ -60,6 +61,7 @@ class MediaTests(unittest.TestCase):
                             self.assertIn("Video:", result.stderr)
                         else:
                             self.assertIn("Audio: mp3", result.stderr)
+                        print(f"VYBE DEMO | {mode.upper()} saved and decoded successfully: {files[0].name}", flush=True)
             finally:
                 server.shutdown()
                 server.server_close()

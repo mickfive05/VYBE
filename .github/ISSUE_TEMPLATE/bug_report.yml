@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a reproducible VYBE failure.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Remove tokens, cookies, private URLs, clipboard contents, and personal paths before posting."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS/version, Python version, VYBE version, and X11/Wayland on Linux.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and expected behavior
+      description: Include the exact command or shortcut and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Include doctor results and relevant errors; say if you tested a one-shot download.
+      render: text
+    validations:
+      required: true

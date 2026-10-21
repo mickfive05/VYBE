@@ -37,3 +37,19 @@ To validate skill metadata and build distributions, install `PyYAML`, `build`, `
 For each target desktop: run `doctor`, start `run` (or native Wayland shortcuts), copy a permitted YouTube video URL, trigger MP4 and MP3 separately, inspect logs, then run `ffprobe -v error -show_format -show_streams FILE` on each output. Check duplicate presses, invalid clipboard text, cancellation, and restart after login. Record results before claiming that desktop is verified.
 
 GitHub Actions is configured for six portable OS/Python combinations and a Linux FFmpeg integration job. Configuration alone is not a passing CI result; consult the actual run for the relevant commit.
+
+## Public CI follow-up
+
+The [first public run](https://github.com/mickfive05/VYBE/actions/runs/39665816265)
+passed the macOS and Ubuntu portable jobs and the Linux media integration job.
+Windows exposed two problems: the listener tests patched the shared
+`sys.platform` value and selected an unavailable POSIX lock backend; a competing
+Windows byte-range lock could also reject the initial lock-file read before
+the intended contention handler ran.
+
+The beta changes isolate the simulated platform to the CLI module and include
+that initial read in the contention handler. The existing nested-lock test
+exercises exclusion and release on the actual CI operating system. The
+[workflow badge](https://github.com/mickfive05/VYBE/actions/workflows/tests.yml)
+links to the latest result; desktop permissions, physical shortcut presses,
+and actual YouTube extraction remain separate manual checks.

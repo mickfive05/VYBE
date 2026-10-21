@@ -104,12 +104,14 @@ def exclusive(path: Path):
     """OS-held lock: automatically released on exit or crash, including Windows."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a+b") as handle:
-        handle.seek(0)
-        if not handle.read(1):
-            handle.write(b"0")
-            handle.flush()
-        handle.seek(0)
         try:
+            # A Windows byte-range lock can reject this initial read too.
+            # Treat that contention exactly like a failed lock acquisition.
+            handle.seek(0)
+            if not handle.read(1):
+                handle.write(b"0")
+                handle.flush()
+            handle.seek(0)
             if sys.platform == "win32":
                 import msvcrt
                 msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
